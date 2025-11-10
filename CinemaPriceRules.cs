@@ -24,16 +24,18 @@
         /// </remarks>
         public static string GetCinemaPriceAsText(int age)
         {
+            decimal price = GetCinemaPrice(age);
+
             if (age < 5)
-                return $"Pris för barn under 5 år: {GetCinemaPrice(age)} kr";
+                return $"Pris för barn under 5 år: {price} kr";
             else if (age < 20)
-                return $"Ungdomspris: {GetCinemaPrice(age)} kr";
+                return $"Ungdomspris: {price} kr";
             else if (age > 100)
-                return $"Pris för personer över 100 år: {GetCinemaPrice(age)} kr";
+                return $"Pris för personer över 100 år: {price} kr";
             else if (age > 64)
-                return $"Pensionärspris: {GetCinemaPrice(age)} kr";
+                return $"Pensionärspris: {price} kr";
             else
-                return $"Standardpris: {GetCinemaPrice(age)} kr";
+                return $"Standardpris: {price} kr";
         }
     }
 }
